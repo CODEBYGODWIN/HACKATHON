@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/form.css">
+    <title>Form</title>
+</head>
+<body>
+    <h1>{{.Title}}</h1>
+    <form action="/generate" method="post">
+        <label for="theme">Thème :</label>
+        <input type="text" name="theme" required><br>
+        <label for="content">Contenu :</label>
+        <textarea name="content" required></textarea><br>
+        <label for="background">Couleur de fond :</label>
+        <input type="color" name="background" value="#ffffff"><br>
+        <button type="submit">Générer Mini-Site</button>
+    </form>
+</body>
+</html>
