@@ -7,14 +7,13 @@
     <title>Code source</title>
 </head>
 <body>
-    <textarea name="" id="textToCopy" cols="500" rows="20">
+    <textarea  id="textToCopy" cols="250" rows="20" readonly>
         &lt;!DOCTYPE html&gt;   
         &lt;html lang="fr"&gt;
             &lt;head&gt;
                 &lt;meta charset="UTF-8"&gt;
                 &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-                &lt;title&gt;Result&lt;/title&gt;
-                &lt;link rel="stylesheet" href="../static/result.css"&gt;
+                &lt;title&gt;{{.Theme}}&lt;/title&gt;
             &lt;/head&gt;
             &lt;body&gt;
                 &lt;h1&gt;{{.Theme}}&lt;/h1&gt;
@@ -23,6 +22,7 @@
             &lt;/body&gt;
         &lt;/html&gt;
     </textarea>
+    <br>
     <button id="copyButton">📋Copier</button>
 </body>
 <script src="../static/script/script.js"></script>
