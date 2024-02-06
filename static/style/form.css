@@ -29,13 +29,13 @@ button:hover {
 }
 
 
-.titre, .theme, .content, .color {
+.title, .theme, .content, .color, .link {
     display: flex;
     justify-content: space-between;
     cursor: pointer;
 }
 
-.titreChoix, .themeChoix, .contentChoix, .colorChoix{
+.titleChoice, .themeChoice, .contentChoice, .colorChoice, .linkChoice{
     display: none;
     justify-content: space-between;
 }

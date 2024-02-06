@@ -1,51 +1,65 @@
-let titre = document.querySelector('.titre');
-let titreChoix = document.querySelector('.titreChoix');
+let title = document.querySelector('.title');
+let titleChoice = document.querySelector('.titleChoice');
 
 let theme = document.querySelector('.theme');
-let themeChoix = document.querySelector('.themeChoix');
+let themeChoice = document.querySelector('.themeChoice');
 
 let content = document.querySelector('.content');
-let contentChoix = document.querySelector('.contentChoix');
+let contentChoice = document.querySelector('.contentChoice');
 
 let color = document.querySelector('.color');
-let colorChoix = document.querySelector('.colorChoix');
+let colorChoice = document.querySelector('.colorChoice');
+
+let link = document.querySelector('.link');
+let linkChoice = document.querySelector('.linkChoice');
 
 
-titre.addEventListener('click', () => {
-   if (titreChoix.style.display == 'block') {
-       titreChoix.style.display = 'none';
+title.addEventListener('click', () => {
+   if (titleChoice.style.display == 'block') {
+       titleChoice.style.display = 'none';
    } else {
-         titreChoix.style.display = 'block';
+         titleChoice.style.display = 'block';
     }
 }
 );
 
 theme.addEventListener('click', () => {
-    if (themeChoix.style.display == 'block') {
-        themeChoix.style.display = 'none';
+    if (themeChoice.style.display == 'block') {
+        themeChoice.style.display = 'none';
     }
     else {
-        themeChoix.style.display = 'block';
+        themeChoice.style.display = 'block';
     }
 }
 );
 
 content.addEventListener('click', () => {
-    if (contentChoix.style.display == 'block') {
-        contentChoix.style.display = 'none';
+    if (contentChoice.style.display == 'block') {
+        contentChoice.style.display = 'none';
     }
     else {
-        contentChoix.style.display = 'block';
+        contentChoice.style.display = 'block';
     }
 }
 );
 
 color.addEventListener('click', () => {
-    if (colorChoix.style.display == 'block') {
-        colorChoix.style.display = 'none';
+    if (colorChoice.style.display == 'block') {
+        colorChoice.style.display = 'none';
     }
     else {
-        colorChoix.style.display = 'block';
+        colorChoice.style.display = 'block';
+    }
+}
+);
+
+
+link.addEventListener('click', () => {
+    if (linkChoice.style.display == 'block') {
+        linkChoice.style.display = 'none';
+    }
+    else {
+        linkChoice.style.display = 'block';
     }
 }
 );

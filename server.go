@@ -13,18 +13,11 @@ import (
 var sessionColor string
 
 type MiniSiteData struct {
-	Titre      string
+	Title      string
 	Theme      string
 	Content    string
 	Background string
 	Link       string
-}
-
-type PageData struct {
-	Title      string
-	MiniSite   MiniSiteData
-	Generated  bool
-	Generation string
 }
 
 func main() {
@@ -54,12 +47,7 @@ func showForm(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-
-	data := PageData{
-		Title: "Créateur de Mini-Sites",
-	}
-
-	tmpl.Execute(w, data)
+	tmpl.Execute(w, nil)
 }
 
 func generateMiniSite(w http.ResponseWriter, r *http.Request) (MiniSiteData){
@@ -73,7 +61,7 @@ func generateMiniSite(w http.ResponseWriter, r *http.Request) (MiniSiteData){
 	content := r.FormValue("content")
 	backgroundHex := r.FormValue("background")
 	link := r.FormValue("link")
-	titre := r.FormValue("titre")
+	title := r.FormValue("title")
 
 	backgroundRGBA := hexToRGBA(backgroundHex)
 
@@ -89,12 +77,14 @@ func generateMiniSite(w http.ResponseWriter, r *http.Request) (MiniSiteData){
 	}
 
 	data := MiniSiteData{
-		Titre:      titre,
+		Title:      title,
 		Theme:      theme,
 		Content:    content,
 		Background: sessionColor,
 		Link: link,
 	}
+
+	fmt.Println(data)
 
 		
 
@@ -111,16 +101,9 @@ func showResult(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	data := PageData{
-		Title:      "Résultat de la Génération",
-		Generated:  true,
-		Generation: "Mini-site généré",
-		MiniSite: MiniSiteData{
-			Background: sessionColor,
-		},
-	}
 
-	tmpl.Execute(w, data)
+
+	tmpl.Execute(w, nil)
 }
 
 func hexToRGBA(hex string) string {
