@@ -16,6 +16,7 @@ type MiniSiteData struct {
 	Theme      string
 	Content    string
 	Background string
+	Link       string
 }
 
 type PageData struct {
@@ -26,10 +27,16 @@ type PageData struct {
 }
 
 func main() {
+	var data MiniSiteData
 	http.HandleFunc("/", showForm)
-	http.HandleFunc("/generate", generateMiniSite)
+	http.HandleFunc("/generate", func(w http.ResponseWriter, r *http.Request) {
+		data = generateMiniSite(w, r)
+	})
 	http.HandleFunc("/result", showResult)
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+	http.HandleFunc("/code", func(w http.ResponseWriter, r *http.Request) {
+		code(w, r, data)
+	})
 
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -54,16 +61,17 @@ func showForm(w http.ResponseWriter, r *http.Request) {
 	tmpl.Execute(w, data)
 }
 
-func generateMiniSite(w http.ResponseWriter, r *http.Request) {
+func generateMiniSite(w http.ResponseWriter, r *http.Request) (MiniSiteData){
 	err := r.ParseForm()
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
+		os.Exit(1)
 	}
 
 	theme := r.FormValue("theme")
 	content := r.FormValue("content")
 	backgroundHex := r.FormValue("background")
+	link := r.FormValue("link")
 
 	backgroundRGBA := hexToRGBA(backgroundHex)
 
@@ -75,18 +83,21 @@ func generateMiniSite(w http.ResponseWriter, r *http.Request) {
 	tmpl, err := template.ParseFiles("templates/result.html")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
+		os.Exit(1)
 	}
 
 	data := MiniSiteData{
 		Theme:      theme,
 		Content:    content,
 		Background: sessionColor,
+		Link: link,
 	}
 
 		
 
 	tmpl.Execute(w, data)
+
+	return data
 
 }
 
@@ -130,4 +141,13 @@ func hexToRGBA(hex string) string {
 	decimalB, _ := strconv.ParseInt(b, 16, 64)
 
 	return fmt.Sprintf("rgba(%d, %d, %d, 1)", decimalR, decimalG, decimalB)
+}
+
+func code(w http.ResponseWriter, r *http.Request, data MiniSiteData) {
+	tmpl, err := template.ParseFiles("templates/code.html")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	tmpl.Execute(w, data)
 }
