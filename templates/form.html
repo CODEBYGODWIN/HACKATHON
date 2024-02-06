@@ -9,15 +9,26 @@
 <body>
     <h1>Generateur site internet</h1>
     <form action="/generate" method="post">
-        <label for="theme">Thème :</label>
-        <input type="text" name="theme" required><br>
-        <label for="content">Contenu :</label>
-        <textarea name="content" required></textarea><br>
-        <label for="background">Couleur de fond :</label>
-        <input type="color" name="background" value="#ffffff"><br>
-        <label for="link">Lien a envoyer :</label>
-        <input name="link" required></input><br>
+        <p class="titre">Cliquez pour ajouter un titre <img src="/static/images/téléchargement.png" alt="" width=5%></p>
+        <input class="titreChoix" type="text" name="titre">
+        <br>
+        <br>
+        <p class="theme">Cliquez pour ajouter un theme <img src="/static/images/téléchargement.png" alt="" width=5%></p>
+        <input class="themeChoix" type="text" name="theme">
+        <br>
+        <br>
+        <p class="description">Cliquez pour ajouter une description <img src="/static/images/téléchargement.png" alt="" width=5%></p>
+        <input class="descriptionChoix" type="text" name="description">
+        <br>
+        <br>
+        <p class="color">Cliquez pour ajouter une couleur de fond <img src="/static/images/téléchargement.png" alt="" width=5%></p>
+        <input class="colorChoix" type="color" name="color">
+        <br>
+        <br>
         <button type="submit">Générer Mini-Site</button>
+
     </form>
+    
 </body>
+<script src="../static/script/scriptForm.js"></script>
 </html>

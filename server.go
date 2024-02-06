@@ -13,6 +13,7 @@ import (
 var sessionColor string
 
 type MiniSiteData struct {
+	Titre      string
 	Theme      string
 	Content    string
 	Background string
@@ -72,6 +73,7 @@ func generateMiniSite(w http.ResponseWriter, r *http.Request) (MiniSiteData){
 	content := r.FormValue("content")
 	backgroundHex := r.FormValue("background")
 	link := r.FormValue("link")
+	titre := r.FormValue("titre")
 
 	backgroundRGBA := hexToRGBA(backgroundHex)
 
@@ -87,6 +89,7 @@ func generateMiniSite(w http.ResponseWriter, r *http.Request) (MiniSiteData){
 	}
 
 	data := MiniSiteData{
+		Titre:      titre,
 		Theme:      theme,
 		Content:    content,
 		Background: sessionColor,

@@ -20,8 +20,27 @@ button {
     color: white;
     border: none;
     cursor: pointer;
+    justify-content: space-between;
 }
 
 button:hover {
+   
     background-color: #45a049;
 }
+
+
+.titre, .theme, .description, .color {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.titreChoix, .themeChoix, .descriptionChoix, .colorChoix{
+    display: none;
+    justify-content: space-between;
+}
+
+
+
+
+
