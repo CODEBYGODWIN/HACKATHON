@@ -4,8 +4,8 @@ let titreChoix = document.querySelector('.titreChoix');
 let theme = document.querySelector('.theme');
 let themeChoix = document.querySelector('.themeChoix');
 
-let description = document.querySelector('.description');
-let descriptionChoix = document.querySelector('.descriptionChoix');
+let content = document.querySelector('.content');
+let contentChoix = document.querySelector('.contentChoix');
 
 let color = document.querySelector('.color');
 let colorChoix = document.querySelector('.colorChoix');
@@ -30,12 +30,12 @@ theme.addEventListener('click', () => {
 }
 );
 
-description.addEventListener('click', () => {
-    if (descriptionChoix.style.display == 'block') {
-        descriptionChoix.style.display = 'none';
+content.addEventListener('click', () => {
+    if (contentChoix.style.display == 'block') {
+        contentChoix.style.display = 'none';
     }
     else {
-        descriptionChoix.style.display = 'block';
+        contentChoix.style.display = 'block';
     }
 }
 );
