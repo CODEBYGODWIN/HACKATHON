@@ -12,22 +12,41 @@ let colorChoix = document.querySelector('.colorChoix');
 
 
 titre.addEventListener('click', () => {
-    titreChoix.style.display = 'block';
+   if (titreChoix.style.display == 'block') {
+       titreChoix.style.display = 'none';
+   } else {
+         titreChoix.style.display = 'block';
+    }
 }
 );
 
 theme.addEventListener('click', () => {
-    themeChoix.style.display = 'block';
+    if (themeChoix.style.display == 'block') {
+        themeChoix.style.display = 'none';
+    }
+    else {
+        themeChoix.style.display = 'block';
+    }
 }
 );
 
 description.addEventListener('click', () => {
-    descriptionChoix.style.display = 'block';
+    if (descriptionChoix.style.display == 'block') {
+        descriptionChoix.style.display = 'none';
+    }
+    else {
+        descriptionChoix.style.display = 'block';
+    }
 }
 );
 
 color.addEventListener('click', () => {
-    colorChoix.style.display = 'block';
+    if (colorChoix.style.display == 'block') {
+        colorChoix.style.display = 'none';
+    }
+    else {
+        colorChoix.style.display = 'block';
+    }
 }
 );
 
