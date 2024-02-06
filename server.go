@@ -72,8 +72,21 @@ func generateMiniSite(w http.ResponseWriter, r *http.Request) {
 
 	sessionColor = backgroundRGBA
 
-	redirectURL := "/result"
-	http.Redirect(w, r, redirectURL, http.StatusSeeOther)
+	tmpl, err := template.ParseFiles("templates/result.html")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	data := MiniSiteData{
+		Theme:      theme,
+		Content:    content,
+		Background: sessionColor,
+	}
+
+		
+
+	tmpl.Execute(w, data)
 
 }
 
