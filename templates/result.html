@@ -1,0 +1,26 @@
+<!-- templates/result.html -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="../static/result.css">
+</head>
+<body style="background-color: {{.MiniSite.Background}};">
+    <h1>{{.Title}}</h1>
+
+    {{if .Generated}}
+        <p>{{.Generation}}</p>
+        <h2>Mini-Site :</h2>
+        <div>
+            <p>Thème : {{.MiniSite.Theme}}</p>
+            <p>Contenu : {{.MiniSite.Content}}</p>
+            <p>Fond : {{.MiniSite.Background}}</p>
+        </div>
+    {{else}}
+        <p>La génération du mini-site a échoué.</p>
+    {{end}}
+</body>
+</html>
