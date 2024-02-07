@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
       for (var i = 0; i < numForms; i++) {
         var formInput = document.createElement('input');
         formInput.type = 'text';
+        formInput.name = 'formInput' + (i+1); // Ajout du nom attribué aux champs
         formInput.placeholder = 'Champ ' + (i+1);
 
         formInputs.appendChild(formInput);
