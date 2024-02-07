@@ -55,5 +55,9 @@
     <a href="code.php" target="_blank">Voir le code source</a>
   </div>
 
+  <div class=button-links>
+    <a href="generator.html" target="_blank">Créer une nouvelle page</a>
+  </div>
+
 </body>
 </html>
