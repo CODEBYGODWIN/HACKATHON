@@ -29,11 +29,11 @@ textarea {
   margin-bottom: 20px;
 }
 
-#linkInputs input {
+#linkInputs input, #formInputs {
   margin-bottom: 5px;
   width: calc(50% - 5px);
 }
 
-#linkInputs input:nth-child(even) {
+#linkInputs input:nth-child(even), #formInputs input:nth-child(even) {
   margin-left: 10px;
 }

@@ -30,15 +30,28 @@
     </select><br><br>
 
     <label for="siteBackgroundColor">Fond du site:</label><br>
-    <input type="color" id="siteBackgroundColor" name="siteBackgroundColor"><br><br>
+    <input type="color" id="siteBackgroundColor" name="siteBackgroundColor" required><br><br>
+
+
+
 
     <label for="addLinks">Bouton lien:</label><br>
-    <input type="radio" id="yes" name="addLinks" value="yes"> Yes
-    <input type="radio" id="no" name="addLinks" value="no" checked> No<br><br>
+    <input type="radio" id="yesLink" name="addLinks" value="yes"> Yes
+    <input type="radio" id="noLink" name="addLinks" value="no" checked> No<br><br>
 
     <div id="linkInputs"></div><br>
 
     <button type="button" id="addLinkButton" style="display: none;">Ajouter un lien</button><br><br>
+
+
+
+    <label for="addForm">Formulaire:</label><br>
+    <input type="radio" id="yesForm" name="addForm" value="yes"> Yes
+    <input type="radio" id="noForm" name="addForm" value="no" checked> No<br><br>
+
+    <div id="formInputs"></div><br>
+
+    <button type="button" id="addFormButton" style="display: none;">Ajouter un formulaire</button><br><br>
 
     <button type="submit">Générer</button>
   </form>

@@ -2,12 +2,12 @@ document.addEventListener('DOMContentLoaded', function() {
   var addLinkButton = document.getElementById('addLinkButton');
   var linkInputs = document.getElementById('linkInputs');
 
-  document.getElementById('yes').addEventListener('click', function() {
+  document.getElementById('yesLink').addEventListener('click', function() {
     addLinkButton.style.display = 'block';
     linkInputs.innerHTML = '';
   });
 
-  document.getElementById('no').addEventListener('click', function() {
+  document.getElementById('noLink').addEventListener('click', function() {
     addLinkButton.style.display = 'none';
     linkInputs.innerHTML = '';
   });
@@ -35,4 +35,38 @@ document.addEventListener('DOMContentLoaded', function() {
       alert('Veuillez entrer un nombre valide entre 1 et 5.');
     }
   });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  var addFormButton = document.getElementById('addFormButton');
+  var formInputs = document.getElementById('formInputs');
+
+  document.getElementById('yesForm').addEventListener('click', function() {
+    addFormButton.style.display = 'block';
+    formInputs.innerHTML = '';
+  });
+
+  document.getElementById('noForm').addEventListener('click', function() {
+    addFormButton.style.display = 'none';
+    formInputs.innerHTML = '';
+  });
+
+  addFormButton.addEventListener('click', function() {
+    var numForms = parseInt(prompt('Nombre de champs à ajouter au formulaire (max 5):'));
+    if (!isNaN(numForms) && numForms > 0 && numForms <= 5) {
+      formInputs.innerHTML = '';
+      for (var i = 0; i < numForms; i++) {
+        var formInput = document.createElement('input');
+        formInput.type = 'text';
+        formInput.placeholder = 'Champ ' + (i+1);
+
+        formInputs.appendChild(formInput);
+        formInputs.appendChild(document.createElement('br'));
+      }
+    } else {
+      alert('Veuillez entrer un nombre valide entre 1 et 5.');
+    }
+  });
+
 });
