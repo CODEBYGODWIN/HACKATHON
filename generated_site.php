@@ -10,6 +10,7 @@
     padding: 0;
     background: <?php echo $_POST['siteBackgroundColor']; ?>;
     font-family: <?php echo $_POST['siteFont']; ?>, sans-serif; /* Utilisation de la police choisie */
+    color : <?php echo $_POST['sitePoliceColor']; ?>
   }
 
   #content {
