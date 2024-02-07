@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Générateur de Site Web</title>
+<link rel="stylesheet" href="generator.css">
+</head>
+<body>
+  <h1>Générateur de Site Web</h1>
+  <form id="generatorForm" action="generated_site.php" method="post">
+    <label for="siteName">Nom du site:</label><br>
+    <input type="text" id="siteName" name="siteName" required><br><br>
+
+    <label for="siteContent">Contenu du site:</label><br>
+    <textarea id="siteContent" name="siteContent" required></textarea><br><br>
+
+    <label for="siteFont">Police d'écriture du site:</label><br>
+    <select id="siteFont" name="siteFont">
+      <option value="Arial">Arial</option>
+      <option value="Helvetica">Helvetica</option>
+      <option value="Verdana">Verdana</option>
+      <option value="Times New Roman">Times New Roman</option>
+      <option value="Georgia">Georgia</option>
+      <option value="Palatino">Palatino</option>
+      <option value="Courier New">Courier New</option>
+      <option value="Lucida Console">Lucida Console</option>
+      <option value="Comic Sans MS">Comic Sans MS</option>
+      <option value="Impact">Impact</option>
+    </select><br><br>
+
+    <label for="siteBackgroundColor">Fond du site:</label><br>
+    <input type="color" id="siteBackgroundColor" name="siteBackgroundColor"><br><br>
+
+    <label for="addLinks">Bouton lien:</label><br>
+    <input type="radio" id="yes" name="addLinks" value="yes"> Yes
+    <input type="radio" id="no" name="addLinks" value="no" checked> No<br><br>
+
+    <div id="linkInputs"></div><br>
+
+    <button type="button" id="addLinkButton" style="display: none;">Ajouter un lien</button><br><br>
+
+    <button type="submit">Générer</button>
+  </form>
+
+  <script src="generator.js"></script>
+</body>
+</html>
