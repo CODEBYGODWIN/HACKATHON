@@ -91,6 +91,7 @@
 
   <div class="button-links">
     <a href="code.php" target="_blank">Voir le code source</a>
+    <a href="generator.html" target="_blank">Créer une nouvelle page</a>
   </div>
 </body>
 </html>
