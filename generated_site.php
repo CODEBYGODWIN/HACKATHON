@@ -13,6 +13,10 @@
     color : <?php echo $_POST['sitePoliceColor']; ?>
   }
 
+  p {
+    font-size : <?php echo $_POST['sitePoliceSize']; ?>px;
+  }
+
   #content {
     text-align: center;
     margin-top: 20%;
@@ -31,6 +35,8 @@
     color: #fff;
     text-decoration: none;
   }
+
+
 </style>
 </head>
 <body>
@@ -51,11 +57,9 @@
   }
   ?>
 
+
   <div class="button-links">
     <a href="code.php" target="_blank">Voir le code source</a>
-  </div>
-
-  <div class=button-links>
     <a href="generator.html" target="_blank">Créer une nouvelle page</a>
   </div>
 
