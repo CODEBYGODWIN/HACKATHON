@@ -43,6 +43,7 @@
   <div id="content">
     <h1><?php echo isset($_POST['siteName']) ? $_POST['siteName'] : 'Site Généré'; ?></h1>
     <p><?php echo isset($_POST['siteContent']) ? $_POST['siteContent'] : ''; ?></p>
+
   </div>
 
   <?php

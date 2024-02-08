@@ -4,16 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Générateur de Site Web</title>
-<link rel="stylesheet" href="generator.css">
+<link rel="stylesheet" href="static/style/generator.css">
 </head>
 <body>
   <h1>Générateur de Site Web</h1>
   <form id="generatorForm" action="generated_site.php" method="post">
     <label for="siteName">Nom du site:</label><br>
-    <input type="text" id="siteName" name="siteName" required><br><br>
+    <input type="text" id="siteName" name="siteName" ><br><br>
 
     <label for="siteContent">Contenu du site:</label><br>
-    <textarea id="siteContent" name="siteContent" required></textarea><br><br>
+    <textarea id="siteContent" name="siteContent" ></textarea><br><br>
+
+    <div id="paragraphInputs"></div><br>
+    <button type="button" id="addParagraph">Ajouter un autre paragraphe</button>
+    
+
+
+    <br>
+    <br>
 
     <label for="siteFont">Police d'écriture du site:</label><br>
     <select id="siteFont" name="siteFont">
@@ -30,13 +38,13 @@
     </select><br><br>
 
     <label for="siteBackgroundColor">Fond du site:</label><br>
-    <input type="color" id="siteBackgroundColor" name="siteBackgroundColor" required><br><br>
+    <input type="color" id="siteBackgroundColor" name="siteBackgroundColor" ><br><br>
 
     <label for="sitePoliceColor">Couleur de la police:</label><br>
-    <input type="color" id="sitePoliceColor" name="sitePoliceColor" required><br><br>
+    <input type="color" id="sitePoliceColor" name="sitePoliceColor" ><br><br>
 
     <label for="sitePoliceSize">Taille de la police:</label><br>
-    <input type="number" id="sitePoliceSize" name="sitePoliceSize" required><br><br>
+    <input type="number" id="sitePoliceSize" name="sitePoliceSize" ><br><br>
 
 
     <label for="addLinks">Bouton lien:</label><br>
