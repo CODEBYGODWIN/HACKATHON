@@ -10,16 +10,12 @@
     padding: 0;
     background: <?php echo $_POST['siteBackgroundColor']; ?>;
     font-family: <?php echo $_POST['siteFont']; ?>, sans-serif; /* Utilisation de la police choisie */
-    color : <?php echo $_POST['sitePoliceColor']; ?>
-  }
-
-  p {
-    font-size : <?php echo $_POST['sitePoliceSize']; ?>px;
+    color : <?php echo $_POST['sitePoliceColor']; ?>;
   }
 
   #content {
     text-align: center;
-    margin-top: 20%;
+    margin-top: 20px;
   }
 
   .button-links {
@@ -37,6 +33,28 @@
   }
 
 
+  .form-field {
+    margin-bottom: 10px;
+  }
+
+  .form-field label {
+    display: block;
+  }
+
+  .form-field input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  #submitBtn {
+    display: <?php echo isset($_POST['addForm']) && $_POST['addForm'] == 'yes' ? 'block' : 'none'; ?>;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
 </style>
 </head>
 <body>
@@ -56,6 +74,20 @@
     }
     echo '</div>';
   }
+
+  if (isset($_POST['addForm']) && $_POST['addForm'] == 'yes') {
+    echo '<form>';
+    for ($i = 1; $i <= 5; $i++) {
+      if (!empty($_POST['formInput'.$i])) {
+        echo '<div class="form-field">';
+        echo '<label for="formInput'.$i.'">'.$_POST['formInput'.$i].':</label>';
+        echo '<input type="text" id="formInput'.$i.'" name="formInput'.$i.'" placeholder="'.$_POST['formInput'.$i].'">';
+        echo '</div>';
+      }
+    }
+    echo '<button type="submit" id="submitBtn">Envoyer</button>'; // Bouton d'envoi du formulaire
+    echo '</form>';
+  }
   ?>
 
 
@@ -63,6 +95,5 @@
     <a href="code.php" target="_blank">Voir le code source</a>
     <a href="generator.html" target="_blank">Créer une nouvelle page</a>
   </div>
-
 </body>
 </html>
