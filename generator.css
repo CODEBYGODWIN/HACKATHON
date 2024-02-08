@@ -53,7 +53,7 @@ textarea {
   margin-bottom: 20px;
 }
 
-#linkInputs input, #formInputs {
+#linkInputs input, #formInputs, #paragraphInputs, #paragraphInputs input:nth-child(even) {
   margin-bottom: 5px;
   width: calc(50% - 5px);
 }

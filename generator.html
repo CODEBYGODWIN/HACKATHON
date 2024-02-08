@@ -17,10 +17,14 @@
   <main></main>
   <form id="generatorForm" action="generated_site.php" method="post">
     <label for="siteName">Nom du site:</label>
-    <input class="intForm" type="text" id="siteName" name="siteName" required>
+    <input class="intForm" type="text" id="siteName" name="siteName" >
 
     <label for="siteContent">Contenu du site:</label>
-    <textarea class="intForm" id="siteContent" name="siteContent" required></textarea>
+    <textarea class="intForm" id="siteContent" name="siteContent" ></textarea>
+
+    <div id="paragraphInputs"></div><br>
+    <button type="button" id="addParagraph">Ajouter un autre paragraphe</button>
+
 
     <label for="siteFont">Police d'écriture du site:</label>
     <select class="intForm" id="siteFont" name="siteFont">
@@ -37,10 +41,10 @@
     </select>
 
     <label for="siteBackgroundColor">Fond du site:</label>
-    <input class="intForm" type="color" id="siteBackgroundColor" name="siteBackgroundColor" required>
+    <input class="intForm" type="color" id="siteBackgroundColor" name="siteBackgroundColor" >
 
     <label for="sitePoliceColor">Couleur de la police:</label><br>
-    <input class="intForm" type="color" id="sitePoliceColor" name="sitePoliceColor" required>
+    <input class="intForm" type="color" id="sitePoliceColor" name="sitePoliceColor" >
 
     <label class="intForm" for="addLinks">Bouton lien:</label>
     <input type="radio" id="yesLink" name="addLinks" value="yes"> Yes
