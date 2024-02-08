@@ -31,6 +31,11 @@ form {
 
 }
 
+.newParagraph textarea{
+  max-width: 600px;
+  width: 400px;
+}
+
 label {
   display: block;
   margin-bottom: 5px;
@@ -99,6 +104,7 @@ textarea {
 /* Style Bouton */
 
 /* Btn ajout de lien */
+.addParagraphebutton,
 .addLinkButton, 
 .addFormButton {
   border: 2px solid #24b4fb;
@@ -110,6 +116,7 @@ textarea {
 
 }
 
+.addParagraphebutton:hover,
 .addLinkButton:hover,
 .addFormButton:hover{
   background-color: #0071e2;
