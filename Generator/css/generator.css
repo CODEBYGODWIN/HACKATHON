@@ -7,8 +7,6 @@ body {
   flex-direction: column;
   color: rgb(255, 255, 255);
   min-height: 100vh;
-
-  /* background */
   background-image: url(./Img/ville\ futurise1.jpg);
   background-size: cover;
   background-position: center;
@@ -27,8 +25,6 @@ form {
   background-color: rgb(0, 0, 0, 0.4);
   backdrop-filter: blur(8px);
   border-radius: 20px;
-  
-
 }
 
 .newParagraph textarea{
@@ -63,36 +59,9 @@ textarea {
   width: calc(50% - 5px);
 }
 
-
-
-
 .footerBack{
   margin-top: 100px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Style Bouton */
 
@@ -114,17 +83,7 @@ textarea {
 .addFormButton:hover{
   background-color: #0071e2;
   color: white;
-
-
 }
-
-
-
-
-
-
-
-
 
 /* Btn Generator */
 .cta {
@@ -200,29 +159,23 @@ textarea {
   0% {
     fill: white;
   }
-
   50% {
     fill: #FBC638;
   }
-
   100% {
     fill: white;
   }
 }
 
-
-
 /* Btn Wiki */
 .divWiki{
   text-align: center;
-
 }
 
 .wiki {
   position: fixed;
   bottom: 20px;
   z-index: 999;
-
   border: 2px solid purple;
   background-color: purple;
   border-radius: 0.9em;
@@ -237,13 +190,6 @@ textarea {
   color: white;
 }
 
-
 .wiki:hover{
   background-color: rgb(205, 5, 205);
-
-
-
 }
-
-
-

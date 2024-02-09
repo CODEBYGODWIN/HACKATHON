@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   addLinkButton.addEventListener('click', function() {
-    var numLinks = parseInt(prompt('Nombre de liens à ajouter (max 5):'));
-    if (!isNaN(numLinks) && numLinks > 0 && numLinks <= 5) {
+    var numLinks = parseInt(prompt('Nombre de liens à ajouter (max 40):'));
+    if (!isNaN(numLinks) && numLinks > 0 && numLinks <= 40) {
       linkInputs.innerHTML = '';
       for (var i = 0; i < numLinks; i++) {
         var linkInput = document.createElement('input');
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         linkInputs.appendChild(document.createElement('br'));
       }
     } else {
-      alert('Veuillez entrer un nombre valide entre 1 et 5.');
+      alert('Veuillez entrer un nombre valide entre 1 et 40.');
     }
   });
 });
@@ -53,45 +53,45 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   addFormButton.addEventListener('click', function() {
-    var numForms = parseInt(prompt('Nombre de champs à ajouter au formulaire (max 5):'));
-    if (!isNaN(numForms) && numForms > 0 && numForms <= 5) {
+    var numForms = parseInt(prompt('Nombre de champs à ajouter au formulaire (max 40):'));
+    if (!isNaN(numForms) && numForms > 0 && numForms <= 40) {
       formInputs.innerHTML = '';
       for (var i = 0; i < numForms; i++) {
         var formInput = document.createElement('input');
         formInput.type = 'text';
-        formInput.name = 'formInput' + (i+1); // Ajout du nom attribué aux champs
+        formInput.name = 'formInput' + (i+1);
         formInput.placeholder = 'Champ ' + (i+1);
 
         formInputs.appendChild(formInput);
         formInputs.appendChild(document.createElement('br'));
       }
     } else {
-      alert('Veuillez entrer un nombre valide entre 1 et 5.');
+      alert('Veuillez entrer un nombre valide entre 1 et 40.');
     }
   });
 
   var addParagraphbutton = document.getElementById('addParagraph');
   var paragraphInputs = document.getElementById('paragraphInputs');
-  var paragraphCounter = 0; // Compteur de paragraphes
+  var paragraphCounter = 0;
 
-  var paragraphValues = []; // Tableau pour stocker les valeurs des paragraphes
+  var paragraphValues = [];
 
   addParagraphbutton.addEventListener('click', function() {
-    var numPara = parseInt(prompt('Nombre de paragraphes à ajouter (max 5):'));
-    if (!isNaN(numPara) && numPara > 0 && numPara <= 5) {
+    var numPara = parseInt(prompt('Nombre de paragraphes à ajouter (max 40):'));
+    if (!isNaN(numPara) && numPara > 0 && numPara <= 40) {
       paragraphInputs.innerHTML = '';
-      paragraphValues = []; // Réinitialise le tableau des valeurs des paragraphes
+      paragraphValues = [];
       for (var i = 0; i < numPara; i++) {
         var paragraphInput = document.createElement('textarea');
         paragraphInput.type = 'text';
-        paragraphInput.name = 'paragraphs[]'; // Nom du champ de paragraphe pour l'envoi via le formulaire
+        paragraphInput.name = 'paragraphs[]';
         paragraphInput.placeholder = 'Paragraphe ' + (i+1);
 
         paragraphInputs.appendChild(paragraphInput);
         paragraphInputs.appendChild(document.createElement('br'));
       }
     } else {
-      alert('Veuillez entrer un nombre valide entre 1 et 5.');
+      alert('Veuillez entrer un nombre valide entre 1 et 40.');
     }
   });
 
