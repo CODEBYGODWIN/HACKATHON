@@ -63,13 +63,6 @@ textarea {
   width: calc(50% - 5px);
 }
 
-/* #linkInputs input:nth-child(even), #formInputs input:nth-child(even) {
-  margin-left: 10px;
-}
- */
-
-
-
 
 
 
@@ -248,8 +241,3 @@ textarea {
 
 
 
-@media screen and (min-width: 900px) {
-  form {
-
-  }
-}

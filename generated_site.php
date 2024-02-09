@@ -49,8 +49,8 @@ main{
   form {
     display: flex;
     flex-direction: column; 
-    width: 450px; 
-
+    width: 80%; 
+    max-width: 500px;
     background-color:white ;
     border: 2px solid grey;
     border-radius: 20px;
@@ -62,7 +62,7 @@ main{
 
   .form-field {
     margin-bottom: 10px;
-    width: 400px;
+    width: 80%px;
 
   }
 
@@ -132,7 +132,6 @@ main{
   background-color: #0071e2;
   color: white;
 }
-
 
 
 
