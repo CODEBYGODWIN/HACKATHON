@@ -9,7 +9,7 @@ body {
   min-height: 100vh;
 
   /* background */
-  background-image: url(./static/images/bgImg/ville\ futurise1.jpg);
+  background-image: url(./Img/ville\ futurise1.jpg);
   background-size: cover;
   background-position: center;
   backdrop-filter: blur(3px);

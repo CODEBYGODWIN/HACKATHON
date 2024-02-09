@@ -230,7 +230,7 @@ main{
   <!-- bouton pour voir code et retour a la page generator  -->
   <footer class=" codeAndBack">
     <a class="code" href="code.php" target="_blank">Voir le code source</a>
-    <a class="back" href="generator.html" target="_blank">Créer une nouvelle page</a>
+    <a class="back" href="../html/generator.html" target="_blank">Créer une nouvelle page</a>
   </footer>
 </body>
 </html>

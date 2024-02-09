@@ -26,6 +26,7 @@ $htmlAndCss = extractHtmlAndCss(file_get_contents('generated_site.php'));
 $htmlContent = $htmlAndCss['html'];
 $cssContent = $htmlAndCss['css'];
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
