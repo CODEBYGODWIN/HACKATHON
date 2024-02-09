@@ -9,7 +9,7 @@
     margin: 0;
     padding: 0;
     background: <?php echo $_POST['siteBackgroundColor']; ?>;
-    font-family: <?php echo $_POST['siteFont']; ?>, sans-serif; /* Utilisation de la police choisie */
+    font-family: <?php echo $_POST['siteFont']; ?>, sans-serif;
     color : <?php echo $_POST['sitePoliceColor']; ?>;
   }
 
@@ -31,7 +31,6 @@
     color: #fff;
     text-decoration: none;
   }
-
 
   .form-field {
     margin-bottom: 10px;
@@ -61,6 +60,16 @@
   <div id="content">
     <h1><?php echo isset($_POST['siteName']) ? $_POST['siteName'] : 'Site Généré'; ?></h1>
     <p><?php echo isset($_POST['siteContent']) ? $_POST['siteContent'] : ''; ?></p>
+    <?php
+      if(isset($_POST['paragraphs']) && is_array($_POST['paragraphs'])) {
+        echo '<div id="paragraphs">';
+        foreach($_POST['paragraphs'] as $paragraph) {
+          echo "<p>$paragraph</p>";
+        }
+        echo '</div>';
+      }
+      ?>
+
 
   </div>
 
