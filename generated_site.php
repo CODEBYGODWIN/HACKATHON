@@ -6,13 +6,14 @@
 <title><?php echo isset($_POST['siteName']) ? $_POST['siteName'] : 'Site Généré'; ?></title>
 <style>
   body {
+
     margin: 40px;
     padding: 0;
     background: <?php echo $_POST['siteBackgroundColor']; ?>;
     font-family: <?php echo $_POST['siteFont']; ?>, sans-serif;
     color : <?php echo $_POST['sitePoliceColor']; ?>;
 
-    min-height: 100vh;
+    max-height: 100vh;
   }
 
 
@@ -83,6 +84,8 @@ main{
   .form-field input[type="text"] {
     width: 100%;
     box-sizing: border-box;
+    border-radius: 20px;
+    padding:5px;
 
   }
 
@@ -95,25 +98,30 @@ main{
 
 
 
+.addFormButton {
+  display: <?php echo isset($_POST['addForm']) && $_POST['addForm'] == 'yes' ? 'block' : 'none'; ?>;
+  border: 2px solid #24b4fb;
+  background-color: #24b4fb;
+  border-radius: 0.9em;
+  padding: 0.8em 1.2em 0.8em 1em;
+  transition: all ease-in-out 0.5s;
+  font-size: 15px;
+  width: 50%;
+  cursor: pointer;
+
+}
+
+
+.addFormButton:hover{
+  background-color: #0071e2;
+  color: white;
+}
 
 
 
 
 
 
-
-
-
-
-  #submitBtn {
-    display: <?php echo isset($_POST['addForm']) && $_POST['addForm'] == 'yes' ? 'block' : 'none'; ?>;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
 
 .codeAndBack{
   display: flex;
@@ -126,24 +134,6 @@ main{
 
 
 
-  .code{
-    /* position: absolute;
-    bottom: 50px;
-    left: 150px;
-    transform: translate(-50%, -50%); */
-
-  }
-
-  .back{
-    /* position: absolute;
-    bottom: 50px;
-    right: 0.1px;
-    transform: translate(-50%, -50%); */
-}
-
-
-
-
 </style>
 </head>
 <body>
@@ -152,56 +142,56 @@ main{
   <div id="content">
     <h1><?php echo isset($_POST['siteName']) ? $_POST['siteName'] : 'Site Généré'; ?></h1>
     <main>
-    <p><?php echo isset($_POST['siteContent']) ? $_POST['siteContent'] : ''; ?></p>
-    <?php
-      if(isset($_POST['paragraphs']) && is_array($_POST['paragraphs'])) {
-        echo '<div id="paragraphs">';
-        foreach($_POST['paragraphs'] as $paragraph) {
-          echo "<p>$paragraph</p>";
+          <p><?php echo isset($_POST['siteContent']) ? $_POST['siteContent'] : ''; ?></p>
+          <?php
+            if(isset($_POST['paragraphs']) && is_array($_POST['paragraphs'])) {
+              echo '<div id="paragraphs">';
+              foreach($_POST['paragraphs'] as $paragraph) {
+                echo "<p>$paragraph</p>";
+              }
+              echo '</div>';
+            }
+
+
+
+
+
+      // Bouton lien 
+
+      if (isset($_POST['addLinks']) && $_POST['addLinks'] == 'yes') {
+        echo '<div class="button-links">';
+        for ($i = 1; $i <= 5; $i++) {
+          if (!empty($_POST['link'.$i])) {
+            echo '<a href="'.$_POST['link'.$i].'" target="_blank">'.$_POST['buttonName'.$i].'</a>';
+          }
         }
         echo '</div>';
       }
-  echo  '</div>';
 
 
+      // Formulaire 
+      if (isset($_POST['addForm']) && $_POST['addForm'] == 'yes') {
+        echo '<div class="div_form">';
+        echo '<form clsass="form">';
+        echo    '<h2 class="title">Formulaire </h2>';
 
-
-  // Bouton lien 
-
-  if (isset($_POST['addLinks']) && $_POST['addLinks'] == 'yes') {
-    echo '<div class="button-links">';
-    for ($i = 1; $i <= 5; $i++) {
-      if (!empty($_POST['link'.$i])) {
-        echo '<a href="'.$_POST['link'.$i].'" target="_blank">'.$_POST['buttonName'.$i].'</a>';
+        for ($i = 1; $i <= 5; $i++) {
+          if (!empty($_POST['formInput'.$i])) {
+            echo '<div class="form-field">';
+            echo   '<label>';
+            echo      '<input type="text" id="formInput'.$i.'" name="formInput'.$i.'" placeholder="'.$_POST['formInput'.$i].'" class="input">';
+            echo   '</label>';
+            echo '</div>';
+          }
+        }
+        // echo '<button type="submit" id="submitBtn">Envoyer</button>'; // Bouton d'envoi du formulaire
+        echo '<button class="addFormButton envoyeForm" type="submit" id="submitBtn">Envoyer</button>';// Bouton d'envoi du formulaire
+        echo '</form>';
       }
-    }
-    echo '</div>';
-  }
+      echo '</div>';
 
-
-  // Formulaire 
-  if (isset($_POST['addForm']) && $_POST['addForm'] == 'yes') {
-    echo '<div class="div_form">';
-    echo '<form clsass="form">';
-    echo    '<h2 class="title">Register </h2>';
-
-    for ($i = 1; $i <= 5; $i++) {
-      if (!empty($_POST['formInput'.$i])) {
-        echo '<div class="form-field">';
-        // echo '<label for="formInput'.$i.'">'.$_POST['formInput'.$i].':</label>';
-        echo   '<label>';
-        echo      '<input type="text" id="formInput'.$i.'" name="formInput'.$i.'" placeholder="'.$_POST['formInput'.$i].'" class="input">';
-        echo   '</label>';
-        echo '</div>';
-      }
-    }
-    echo '<button type="submit" id="submitBtn">Envoyer</button>'; // Bouton d'envoi du formulaire
-    echo '</form>';
-  }
-  echo '</div>';
-  echo '</main>'
-  ?>
-
+      ?>
+  </main>
 
   <!-- bouton pour voir code et retour a la page generator  -->
   <footer class="button-links codeAndBack">

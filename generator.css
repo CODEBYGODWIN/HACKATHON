@@ -113,7 +113,7 @@ textarea {
   padding: 0.8em 1.2em 0.8em 1em;
   transition: all ease-in-out 0.5s;
   font-size: 15px;
-
+  cursor: pointer;
 }
 
 .addParagraphebutton:hover,
@@ -146,6 +146,7 @@ textarea {
   box-shadow: 6px 6px 0 black;
   transform: skewX(-15deg);
   border: none;
+  cursor: pointer;
 }
 
 .cta:focus {
@@ -235,7 +236,7 @@ textarea {
   padding: 18px 23px;
   transition: all ease-in-out 0.5s;
   font-size: 20px;
-
+  cursor: pointer;
 }
 
 .wiki:hover{
@@ -243,4 +244,12 @@ textarea {
   color: white;
 
 
+}
+
+
+
+@media screen and (min-width: 900px) {
+  article {
+    padding: 1rem 3rem;
+  }
 }
