@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php echo isset($_POST['siteName']) ? $_POST['siteName'] : 'Site Généré'; ?></title>
+<link rel="icon" href="">
 <style>
   body {
 
@@ -22,23 +23,13 @@
     text-align: center;
   }
 
+    h2{
+      color:black;
+    }
 main{
   flex:1;
 }
 
-  .button-links {
-    text-align: center;
-    margin-top: 20px;
-  }
-
-  .button-links a {
-    display: inline-block;
-    margin: 5px;
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    text-decoration: none;
-  }
 
 
 
@@ -91,9 +82,34 @@ main{
 
 
 
+  .button-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
 
+  .urlButton {
+    margin: 5px;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #24b4fb;
+    background-color: #24b4fb;
+    border-radius: 0.9em;
+    padding: 0.8em 1.2em 0.8em 1em;
+    transition: all ease-in-out 0.5s;
+    font-size: 15px;
+    width: 20%;
+    cursor: pointer;
 
+  }
 
+  .urlButton:hover{
+    background-color: #0071e2;
+    color: white;
+  }
 
 
 
@@ -127,12 +143,32 @@ main{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  bottom: 50px;
-
-
+  padding-bottom: 50px;
+  padding-top: 50px;
 }
 
 
+
+.code,
+.back {
+  color: black;
+  text-decoration: none;
+  border: 2px solid purple;
+  background-color: purple;
+  border-radius: 0.9em;
+  padding: 10px 12px;
+  transition: all ease-in-out 0.5s;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.code:hover,
+.back:hover{
+  background-color: rgb(205, 5, 205);
+  color: white;
+
+
+}
 
 </style>
 </head>
@@ -162,7 +198,7 @@ main{
         echo '<div class="button-links">';
         for ($i = 1; $i <= 5; $i++) {
           if (!empty($_POST['link'.$i])) {
-            echo '<a href="'.$_POST['link'.$i].'" target="_blank">'.$_POST['buttonName'.$i].'</a>';
+            echo '<a class="urlButton" href="'.$_POST['link'.$i].'" target="_blank">'.$_POST['buttonName'.$i].'</a>';
           }
         }
         echo '</div>';
@@ -184,8 +220,7 @@ main{
             echo '</div>';
           }
         }
-        // echo '<button type="submit" id="submitBtn">Envoyer</button>'; // Bouton d'envoi du formulaire
-        echo '<button class="addFormButton envoyeForm" type="submit" id="submitBtn">Envoyer</button>';// Bouton d'envoi du formulaire
+        echo '<button class="addFormButton type="submit" id="submitBtn">Envoyer</button>';// Bouton d'envoi du formulaire
         echo '</form>';
       }
       echo '</div>';
@@ -194,7 +229,7 @@ main{
   </main>
 
   <!-- bouton pour voir code et retour a la page generator  -->
-  <footer class="button-links codeAndBack">
+  <footer class=" codeAndBack">
     <a class="code" href="code.php" target="_blank">Voir le code source</a>
     <a class="back" href="generator.html" target="_blank">Créer une nouvelle page</a>
   </footer>
