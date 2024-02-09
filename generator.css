@@ -232,9 +232,15 @@ textarea {
   cursor: pointer;
 }
 
+.wiki a{
+  text-decoration: none;
+  color: white;
+}
+
+
 .wiki:hover{
   background-color: rgb(205, 5, 205);
-  color: white;
+
 
 
 }
