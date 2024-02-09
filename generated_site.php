@@ -6,17 +6,24 @@
 <title><?php echo isset($_POST['siteName']) ? $_POST['siteName'] : 'Site Généré'; ?></title>
 <style>
   body {
-    margin: 0;
+    margin: 40px;
     padding: 0;
     background: <?php echo $_POST['siteBackgroundColor']; ?>;
     font-family: <?php echo $_POST['siteFont']; ?>, sans-serif;
     color : <?php echo $_POST['sitePoliceColor']; ?>;
+
+    min-height: 100vh;
   }
 
-  #content {
+
+
+  h1{
     text-align: center;
-    margin-top: 20px;
   }
+
+main{
+  flex:1;
+}
 
   .button-links {
     text-align: center;
@@ -32,19 +39,72 @@
     text-decoration: none;
   }
 
+
+
+
+
+
+.div_form{
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+}
+
+
+
+
+
+  form {
+    display: flex;
+    flex-direction: column; 
+    width: 450px; 
+
+    background-color:white ;
+    border: 2px solid grey;
+    border-radius: 20px;
+    padding:20px;
+    margin-top: 20px;
+
+
+  }
+
   .form-field {
     margin-bottom: 10px;
+    width: 400px;
+
   }
 
   .form-field label {
     display: block;
+    text-align: center; 
+
   }
 
   .form-field input[type="text"] {
     width: 100%;
     box-sizing: border-box;
+
   }
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   #submitBtn {
     display: <?php echo isset($_POST['addForm']) && $_POST['addForm'] == 'yes' ? 'block' : 'none'; ?>;
     margin: 20px auto;
@@ -54,11 +114,44 @@
     border: none;
     cursor: pointer;
   }
+
+.codeAndBack{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  bottom: 50px;
+
+
+}
+
+
+
+  .code{
+    /* position: absolute;
+    bottom: 50px;
+    left: 150px;
+    transform: translate(-50%, -50%); */
+
+  }
+
+  .back{
+    /* position: absolute;
+    bottom: 50px;
+    right: 0.1px;
+    transform: translate(-50%, -50%); */
+}
+
+
+
+
 </style>
 </head>
 <body>
+
+  <!-- Titre et paragraphe -->
   <div id="content">
     <h1><?php echo isset($_POST['siteName']) ? $_POST['siteName'] : 'Site Généré'; ?></h1>
+    <main>
     <p><?php echo isset($_POST['siteContent']) ? $_POST['siteContent'] : ''; ?></p>
     <?php
       if(isset($_POST['paragraphs']) && is_array($_POST['paragraphs'])) {
@@ -68,12 +161,13 @@
         }
         echo '</div>';
       }
-      ?>
+  echo  '</div>';
 
 
-  </div>
 
-  <?php
+
+  // Bouton lien 
+
   if (isset($_POST['addLinks']) && $_POST['addLinks'] == 'yes') {
     echo '<div class="button-links">';
     for ($i = 1; $i <= 5; $i++) {
@@ -84,24 +178,35 @@
     echo '</div>';
   }
 
+
+  // Formulaire 
   if (isset($_POST['addForm']) && $_POST['addForm'] == 'yes') {
-    echo '<form>';
+    echo '<div class="div_form">';
+    echo '<form clsass="form">';
+    echo    '<h2 class="title">Register </h2>';
+
     for ($i = 1; $i <= 5; $i++) {
       if (!empty($_POST['formInput'.$i])) {
         echo '<div class="form-field">';
-        echo '<label for="formInput'.$i.'">'.$_POST['formInput'.$i].':</label>';
-        echo '<input type="text" id="formInput'.$i.'" name="formInput'.$i.'" placeholder="'.$_POST['formInput'.$i].'">';
+        // echo '<label for="formInput'.$i.'">'.$_POST['formInput'.$i].':</label>';
+        echo   '<label>';
+        echo      '<input type="text" id="formInput'.$i.'" name="formInput'.$i.'" placeholder="'.$_POST['formInput'.$i].'" class="input">';
+        echo   '</label>';
         echo '</div>';
       }
     }
     echo '<button type="submit" id="submitBtn">Envoyer</button>'; // Bouton d'envoi du formulaire
     echo '</form>';
   }
+  echo '</div>';
+  echo '</main>'
   ?>
 
-  <div class="button-links">
-    <a href="code.php" target="_blank">Voir le code source</a>
-    <a href="generator.html" target="_blank">Créer une nouvelle page</a>
-  </div>
+
+  <!-- bouton pour voir code et retour a la page generator  -->
+  <footer class="button-links codeAndBack">
+    <a class="code" href="code.php" target="_blank">Voir le code source</a>
+    <a class="back" href="generator.html" target="_blank">Créer une nouvelle page</a>
+  </footer>
 </body>
 </html>
